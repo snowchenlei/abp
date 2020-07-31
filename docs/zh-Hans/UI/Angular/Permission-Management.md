@@ -55,7 +55,7 @@ export class YourComponent {
 
 如果你想要在导航过程中控制经过身份验证的用户对路由的访问权限,可以使用 `PermissionGuard`.
 
-将 `requiredPolicy` 添加到路由模块中的 `routes`属性.
+将 `requiredPolicy` 添加到路由模块中的 `data`属性.
 
 ```js
 import { PermissionGuard } from '@abp/ng.core';
@@ -66,9 +66,7 @@ const routes: Routes = [
     component: YourComponent,
     canActivate: [PermissionGuard],
     data: {
-      routes: {
         requiredPolicy: 'AbpIdentity.Roles.Create',
-      },
     },
   },
 ];
